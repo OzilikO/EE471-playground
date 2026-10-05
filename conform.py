@@ -1,4 +1,4 @@
-# Junior Dev: OZAN INAN
+#Senior Dev : OZan Inan
 #Programming for the Puzzled -- Srini Devadas
 #You Will All Conform
 #Input is a vector of F's and B's, in terms of forwards and backwards caps
@@ -54,3 +54,25 @@ def pleaseConform(caps):
             
 pleaseConform(caps)
 ##pleaseConform(cap2)
+
+def pleaseConformOnepass(caps):
+ start = 0
+ if len(caps) == 0:
+    print("Empty List, no one is at the stadium huh, must be a bad team")
+ else:
+    caps = caps + [caps[0]]
+    for i in range(1, len(caps)): #[ a b b b A]
+        if caps[i] != caps[i-1]:
+            if caps[i] != caps[0]:
+                start = i
+                #print('People in positions', i, end='')
+            else:
+                if start == i-1:
+                    print("person at psoiiton",start,"please flip your cap!")
+                else:
+                    print("people in positions",start,"through",i-1,"flip your caps please")
+                #print(' through', i-1, 'flip your caps!')
+
+                           
+
+pleaseConformOnepass(caps)
